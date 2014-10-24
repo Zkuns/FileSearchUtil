@@ -11,7 +11,11 @@ class Guide
 
   def action inputs
     util = SearchFileUtil.new
-    util.search_file_recursion(inputs[:FileName],inputs[:KeyWord])
+    if inputs[:Recursion]=='yes'||inputs[:Recursion]=='y'
+      util.search_file_recursion(inputs[:FileName],inputs[:KeyWord])
+    else
+      util.search_file(inputs[:FileName],inputs[:KeyWord])
+    end
   end
 
   def get_action
@@ -25,8 +29,8 @@ class Guide
     print ">"
     inputs[:KeyWord] = gets.chomp
     puts ">Recursion?(y/n or yes/no)"
-    print ">"
-    until 
+    until inputisvalid? inputs[:Recursion]
+      print ">"
       inputs[:Recursion] = gets.chomp
     end
     puts "you choice Filename:#{inputs[:FileName]},KeyWord:#{inputs[:KeyWord]}"

@@ -1,11 +1,20 @@
 module CheckHelp
-  class config
-    @@input=['y','n','yes','no']
-    def self.input
+  class Config
+    @@inputs=['y','n','yes','no']
+    def self.inputs
       @@inputs
     end
   end
-  def 
+  def inputisvalid? input
+    case 
+    when input==''
+      puts 'It can\'t be blank'
+    when input==nil
+
+    when (!Config.inputs.include?input)
+      puts 'Please puts '+Config.inputs.join(',')+' .'
+    end
+    input!=''&&input!=nil&&(Config.inputs.include?input)
   end
   def fileisvalid? filename
     case 

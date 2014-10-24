@@ -14,6 +14,7 @@ class SearchFileUtil
     end
   end
   def search_file(filename,regex)
+    regex = /.*#{regex}.*/
     path=File.expand_path(filename)    
     Dir.entries(filename).each do |filename|
       filename=File.join(path,filename)
