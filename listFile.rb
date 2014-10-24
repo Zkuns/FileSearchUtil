@@ -9,7 +9,7 @@ def puts_file_name (filename,regex)
     path=File.expand_path(filename)
     
     Dir.entries(filename).each do |filename|
-      filename=path+'/'+filename
+      filename=File.join(path,filename)
       puts_file_name(filename,regex)
     end
   else
