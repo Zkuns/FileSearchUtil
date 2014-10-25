@@ -20,5 +20,6 @@ linux中的文件查找工具
  ![img](/lib/1.png)
 
  结果是：
+
  ![img](/lib/2.png)
 	
