@@ -39,7 +39,6 @@ class Guide
     puts ">KeyWord:"
     print ">"
     inputs[:KeyWord] = gets.chomp
-    puts inputs[:KeyWord]
     inputs[:KeyWord] = /.*#{inputs[:KeyWord]}.*/ 
 
   end
